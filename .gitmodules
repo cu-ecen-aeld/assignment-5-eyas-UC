@@ -7,6 +7,3 @@
 	path = buildroot
 	url = https://gitlab.com/buildroot.org/buildroot
 
-[submodule "buildroot-assignments-base"]
-	path = buildroot-assignments-base
-	url = https://github.com/cu-ecen-aeld/buildroot-assignments-base.git
