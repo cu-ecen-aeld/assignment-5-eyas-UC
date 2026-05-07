@@ -1,0 +1,28 @@
+
+#!/bin/sh
+
+case "$1" in
+    start)
+        echo "Loading LLD modules..."
+
+        modprobe hello 2>/dev/null || true
+        modprobe scull 2>/dev/null || insmod /lib/modules/*/extra/scull.ko 2>/dev/null || true
+        modprobe faulty 2>/dev/null || insmod /lib/modules/*/extra/faulty.ko 2>/dev/null || true
+    
+    
+    
+    ;;
+    stop)
+        rmmod faulty 2>/dev/null || true
+        rmmod scull 2>/dev/null || true
+        rmmod hello 2>/dev/null || true
+        ;;
+
+
+    # else
+    *)
+        echo "Usage: $0 {start|stop}"
+        exit 1
+    ;;
+esac
+    exit 0
